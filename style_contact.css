@@ -1,0 +1,65 @@
+/*PARTIE CONTACT*/
+#contact {
+  background-color: var(--color-text); /* Ton Noir #121212 */
+  color: var(--color-base); /* Blanc */
+  padding: clamp(3rem, 6vw, 6rem) 2rem;
+  scroll-margin-top: 80px;
+}
+
+.contact-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 colonnes égales */
+  gap: 4rem;
+  align-items: center;
+}
+
+.contact-info h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 1.5rem;
+}
+
+.contact-info h2 span { color: var(--color-accent); }
+
+.info-item {
+  margin: 1.5rem 0;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Style du formulaire */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input, .contact-form textarea {
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #333; /* Bordure sombre */
+  background: #1e1e1e; /* Gris très foncé pour le fond des champs */
+  color: white;
+  font-family: inherit;
+}
+
+.btn-submit {
+  padding: 15px;
+  background-color: var(--color-accent);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-submit:hover { background-color: var(--color-accent-hover); }
+
+/* Responsive : On empile tout sur mobile */
+@media (max-width: 768px) {
+  .contact-container { grid-template-columns: 1fr; }
+}

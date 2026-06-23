@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_catalogue.css">
+    <link rel="stylesheet" href="style_caroussel.css">
+    <link rel="stylesheet" href="style_contact.css">
+    <script defer src="script.js"></script>
+    <title>Equipement de basket</title>
+</head>
+<body>
+    <section id="accueil">
+        <header>
+            <p>M<span>&</span>T</p>
+
+            
+            <ul>
+                <li> <a href="#accueil" class="lien">Accueil</a></li>
+                <li> <a href="#collections" class="lien">Collection</a></li>
+                <li> <a href="#produits-phares" class="lien">Bestsellers</a></li>
+                <li> <a href="#contact" class="lien">Contact & Localisation</a></li>
+            </ul>
+        
+        
+            <i class="fa-solid fa-basket-shopping"></i>
+            <!-- <p>Profil</p> -->
+        </header>
+
+        <div id="msg-acc">
+            <h1>DOMINE <br> 
+                LE <br>
+                <span>PARQUET</span>
+            </h1>
+            <p>Trouve tes accessoires et prends le contrôle du jeu.</p>
+            <a href="#categories" class="btn-acc">Découvrir la collection</a>
+        </div>
+    </section>
+
+    <section id="collections">
+  <div class="section-titre">
+    <h2>Nos <span>Univers</span></h2>
+    <p>Équipe-toi avec le meilleur du basketball pour dominer le jeu.</p>
+  </div>
+
+  <div class="grid-collections">
+    
+    <div class="collection-card card-large" style="background-image: url('images/pexels-deja-vu-studio-2154209107-33113153.jpg');">
+      <div class="card-overlay">
+        <h3>Sneakers</h3>
+        <a href="#" class="btn-card">Découvrir</a>
+      </div>
+    </div>
+
+    <div class="collection-card" style="background-image: url('images/istockphoto-184914535-1024x1024.jpg');">
+      <div class="card-overlay">
+        <h3>Ballons</h3>
+        <a href="#" class="btn-card">Découvrir</a>
+      </div>
+    </div>
+
+    <div class="collection-card" style="background-image: url('images/pexels-kseniia-lopyreva-3299160-4959811.jpg');">
+      <div class="card-overlay">
+        <h3>Équipements</h3>
+        <a href="#" class="btn-card">Découvrir</a>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section id="produits-phares">
+  <div class="section-title">
+    <h2>Nos <span>Bestsellers</span></h2>
+    <p>L'équipement validé par les joueurs sur le terrain.</p>
+  </div>
+
+  <div class="carousel-container">
+    <button class="arrow-btn prev-btn" id="prevBtn">❮</button>
+    <button class="arrow-btn next-btn" id="nextBtn">❯</button>
+
+    <div class="carousel-track" id="carouselTrack">
+      
+      <div class="produit-card">
+        <div class="produit-image">
+          <span class="badge">Nouveau</span>
+          <img src="images/pexels-perfect-lens-6481840.jpg" alt="Sneaker kobe 6" >
+        </div>
+        <div class="produit-info">
+          <h3>Sneaker Kobe 6</h3>
+          <p class="prix">25. 000 Frs</p>
+          <button class="btn-ajouter">Ajouter</button>
+        </div>
+      </div>
+
+      <div class="produit-card">
+        <div class="produit-image">
+          <img src="images/pexels-bogdankrupin-29267100.jpg" alt="Ballon Willson">
+        </div>
+        <div class="produit-info">
+          <h3>Ballon Willson</h3>
+          <p class="prix">12. 000 Frs</p>
+          <button class="btn-ajouter">Ajouter</button>
+        </div>
+      </div>
+
+      <div class="produit-card">
+        <div class="produit-image">
+          <span class="badge promo">-20%</span>
+          <img src="images/pexels-oacthecreator-10155098.jpg" alt="Kyrie Low 5">
+        </div>
+        <div class="produit-info">
+          <h3>Sneaker Kyrie Low 5</h3>
+          <p class="prix">15. 000 Frs</p>
+          <button class="btn-ajouter">Ajouter</button>
+        </div>
+      </div>
+
+      <div class="produit-card">
+        <div class="produit-image">
+          <img src="images/istockphoto-1213435456-1024x1024.jpg" alt="Sac Pro">
+        </div>
+        <div class="produit-info">
+          <h3>Sac de Sport Pro</h3>
+          <p class="prix">9. 000 Frs</p>
+          <button class="btn-ajouter">Ajouter</button>
+        </div>
+      </div>
+
+      <div class="produit-card">
+        <div class="produit-image">
+          <img src="images/istockphoto-1143283588-1024x1024.jpg" alt="Genouillère">
+        </div>
+        <div class="produit-info">
+          <h3>Genouillère</h3>
+          <p class="prix">25. 000 Frs</p>
+          <button class="btn-ajouter">Ajouter</button>
+        </div>
+      </div>
+      
+
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact-container">
+    
+    <div class="contact-info">
+      <h2>Discutons du <span>Jeu</span></h2>
+      <p>Une question sur un produit ou besoin d'un conseil ? Passe nous voir en boutique ou envoie-nous un message.</p>
+      
+      <div class="info-item">
+        📍 <span>12 Rue du Basketball, Douala</span>
+      </div>
+      <div class="info-item">
+        📞 <span>+237 6XX XX XX XX</span>
+      </div>
+      <div class="info-item">
+        📧 <span>M&T@gmail.com</span>
+      </div>
+    </div>
+
+    <form class="contact-form">
+      <input type="text" placeholder="Ton Nom" required>
+      <input type="email" placeholder="Ton Email" required>
+      <textarea placeholder="Ton Message" rows="5" required></textarea>
+      <button type="submit" class="btn-submit">Envoyer le message</button>
+    </form>
+    
+  </div>
+</section>
+
+   
+
+</body>
+</html>

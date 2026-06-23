@@ -1,0 +1,129 @@
+
+/* --- SECTION COLLECTIONS --- */
+#collections {
+  padding: clamp(4rem, 8vw, 8rem) 2rem; /* Espacement fluide en haut/bas */
+  background-color: var(--color-base); /* Fond Blanc pur */
+  color: var(--color-text); /* Texte Noir */
+  scroll-margin-top: 80px;
+}
+
+/* Style des titres */
+.section-titre{
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-titre h2 {
+  font-family: 'Impact', 'Montserrat', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.section-titre h2 span {
+  color: var(--color-accent); /* Le mot "Univers" en Orange */
+}
+
+.section-titre p {
+  font-size: 1.1rem;
+  color: #666; /* Un gris neutre pour le sous-titre moins important */
+}
+
+/* --- CONFIGURATION DE LA GRILLE (CSS GRID) --- */
+.grid-collections {
+  display: grid;
+  /* On crée une grille virtuelle de 2 colonnes égales */
+  grid-template-columns: repeat(2, 1fr); 
+  /* L'espace entre les cartes (20px environ) */
+  gap: 1.5rem; 
+  max-width: 1200px;
+  margin: 0 auto; /* Centre toute la grille sur l'écran */
+}
+
+/* Style de base d'une carte */
+.collection-card {
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  overflow: hidden; /* Obligatoire pour cacher le zoom de l'image au survol */
+  position: relative;
+  transition: transform 0.4s ease;
+}
+
+/* 🌟 LA MAGIE DE GRID : Le grand bloc Sneakers */
+.card-large {
+  /* Ce bloc va fusionner 2 lignes de la grille pour devenir deux fois plus haut */
+  grid-row: span 2; 
+  height: 624px; /* 300px + 300px + les 24px de gap */
+}
+
+/* Le voile sombre sur l'image pour lire le texte */
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Aligne le texte en bas de la carte */
+  padding: 2rem;
+  transition: background 0.4s ease;
+}
+
+.card-overlay h3 {
+  color: #FFFFFF;
+  font-family: 'Impact', 'Montserrat', sans-serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+/* Bouton à l'intérieur de la carte */
+.btn-card {
+  align-self: flex-start; /* Évite que le bouton prenne toute la largeur */
+  padding: 0.8rem 1.8rem;
+  background-color: transparent;
+  color: #FFFFFF;
+  border: 2px solid #FFFFFF;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+/* --- EFFETS AU SURVOL (HOVER EFFECTS) --- */
+.collection-card:hover {
+  /* La carte entière bouge très légèrement */
+  transform: translateY(-5px);
+}
+
+.collection-card:hover .card-overlay {
+  /* Le voile s'assombrit un peu */
+  background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.4));
+}
+
+.collection-card:hover .btn-card {
+  /* Au survol de la carte, le bouton devient Orange et la bordure disparaît */
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+/* --- RESPONSIVE (MOBILE) --- */
+@media (max-width: 768px) {
+  .grid-collections {
+    /* Sur mobile, on casse la grille pour tout empiler sur 1 seule colonne */
+    grid-template-columns: 1fr;
+  }
+  
+  .card-large {
+    /* On annule la hauteur double sur mobile pour que tout soit uniforme */
+    grid-row: span 1;
+    height: 300px;
+  }
+}
