@@ -1,0 +1,46 @@
+/* --- SECTION AVIS CLIENTS --- */
+#avis {
+  background-color: var(--color-light-gray);
+  padding: clamp(3rem, 6vw, 6rem) 2rem;
+  color: var(--color-text);
+}
+
+.avis-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  /* La magie de Grid : ça passe automatiquement en 1 colonne sur mobile ! */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding-top: 2rem;
+}
+
+.avis-card {
+  background-color: var(--color-base); /* Cartes blanches */
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Ombre très douce */
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+/* Petit effet quand la souris passe sur l'avis */
+.avis-card:hover {
+  transform: translateY(-5px); 
+}
+
+.etoiles {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.avis-texte {
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.avis-auteur {
+  font-weight: bold;
+  color: var(--color-accent);
+}

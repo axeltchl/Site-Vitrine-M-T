@@ -3,78 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" 
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_accueil.css">
     <link rel="stylesheet" href="style_catalogue.css">
     <link rel="stylesheet" href="style_caroussel.css">
+    <link rel="stylesheet" href="style_avis.css">
     <link rel="stylesheet" href="style_contact.css">
     <script defer src="script.js"></script>
     <title>Equipement de basket</title>
 </head>
 <body>
     <section id="accueil">
-        <header>
+        <header data-aos="fade-down">
             <p>M<span>&</span>T</p>
-
             
-            <ul>
+            <ul id="nav-menu">
                 <li> <a href="#accueil" class="lien">Accueil</a></li>
                 <li> <a href="#collections" class="lien">Collection</a></li>
                 <li> <a href="#produits-phares" class="lien">Bestsellers</a></li>
                 <li> <a href="#contact" class="lien">Contact & Localisation</a></li>
             </ul>
-        
-        
+
+            <div class="header-actions">
             <i class="fa-solid fa-basket-shopping"></i>
-            <!-- <p>Profil</p> -->
+            
+            <div class="burger-menu" id="burger">
+                  <span class="barre"></span>
+                  <span class="barre"></span>
+                  <span class="barre"></span>
+              </div>
+            </div>
+        
+        
+           
         </header>
 
-        <div id="msg-acc">
+        <div id="msg-acc" data-aos="fade-right">
             <h1>DOMINE <br> 
                 LE <br>
                 <span>PARQUET</span>
             </h1>
             <p>Trouve tes accessoires et prends le contrôle du jeu.</p>
-            <a href="#categories" class="btn-acc">Découvrir la collection</a>
+            <a href="#collections" class="btn-acc">Découvrir la collection</a>
         </div>
     </section>
 
     <section id="collections">
-  <div class="section-titre">
-    <h2>Nos <span>Univers</span></h2>
-    <p>Équipe-toi avec le meilleur du basketball pour dominer le jeu.</p>
-  </div>
-
-  <div class="grid-collections">
-    
-    <div class="collection-card card-large" style="background-image: url('images/pexels-deja-vu-studio-2154209107-33113153.jpg');">
-      <div class="card-overlay">
-        <h3>Sneakers</h3>
-        <a href="#" class="btn-card">Découvrir</a>
+      <div class="section-title" data-aos="fade-up">
+        <h2>Nos <span>Univers</span></h2>
+        <p>Équipe-toi avec le meilleur du basketball pour dominer le jeu.</p>
       </div>
-    </div>
 
-    <div class="collection-card" style="background-image: url('images/istockphoto-184914535-1024x1024.jpg');">
-      <div class="card-overlay">
-        <h3>Ballons</h3>
-        <a href="#" class="btn-card">Découvrir</a>
+      <div class="grid-collections" data-aos="fade-up">
+        
+        <div class="collection-card card-large" data-aos="fade-right" style="background-image: url('images/pexels-deja-vu-studio-2154209107-33113153.jpg');">
+          <div class="card-overlay">
+            <h3>Sneakers</h3>
+            <a href="#" class="btn-card">Découvrir</a>
+          </div>
+        </div>
+
+        <div class="collection-card" data-aos="fade-left" style="background-image: url('images/istockphoto-184914535-1024x1024.jpg');">
+          <div class="card-overlay">
+            <h3>Ballons</h3>
+            <a href="#" class="btn-card">Découvrir</a>
+          </div>
+        </div>
+
+        <div class="collection-card" data-aos="fade-left" style="background-image: url('images/pexels-kseniia-lopyreva-3299160-4959811.jpg');">
+          <div class="card-overlay">
+            <h3>Équipements</h3>
+            <a href="#" class="btn-card">Découvrir</a>
+          </div>
+        </div>
+
       </div>
-    </div>
-
-    <div class="collection-card" style="background-image: url('images/pexels-kseniia-lopyreva-3299160-4959811.jpg');">
-      <div class="card-overlay">
-        <h3>Équipements</h3>
-        <a href="#" class="btn-card">Découvrir</a>
-      </div>
-    </div>
-
-  </div>
 
 </section>
 
 
-<section id="produits-phares">
+<section id="produits-phares" >
   <div class="section-title">
     <h2>Nos <span>Bestsellers</span></h2>
     <p>L'équipement validé par les joueurs sur le terrain.</p>
@@ -148,10 +161,39 @@
   </div>
 </section>
 
+<section id="avis">
+  <div class="section-title" data-aos="fade-up">
+    <h2>Ce que disent nos <span>Joueurs</span></h2>
+    <p>La satisfaction de l'équipe avant tout.</p>
+  </div>
+
+  <div class="avis-container">
+    
+    <div class="avis-card" data-aos="zoom-in" data-aos-delay="0">
+      <div class="etoiles">⭐⭐⭐⭐⭐</div>
+      <p class="avis-texte">"Qualité incroyable ! Le ballon Grip Master a totalement changé mes entraînements en club."</p>
+      <p class="avis-auteur">- Marc D., Meneur</p>
+    </div>
+
+    <div class="avis-card" data-aos="zoom-in" data-aos-delay="200">
+      <div class="etoiles">⭐⭐⭐</div>
+      <p class="avis-texte">"Livraison super rapide sur Douala. Les sneakers sont top et la taille correspond parfaitement."</p>
+      <p class="avis-auteur">- Sarah L., Ailière</p>
+    </div>
+
+    <div class="avis-card" data-aos="zoom-in" data-aos-delay="400">
+      <div class="etoiles">⭐⭐⭐⭐</div>
+      <p class="avis-texte">"Bon matériel. J'ai eu un petit doute sur le sac de sport, mais le service client a été super réactif sur WhatsApp."</p>
+      <p class="avis-auteur">- Julien T., Coach</p>
+    </div>
+
+  </div>
+</section>
+
 <section id="contact">
   <div class="contact-container">
     
-    <div class="contact-info">
+    <div class="contact-info" data-aos="fade-right">
       <h2>Discutons du <span>Jeu</span></h2>
       <p>Une question sur un produit ou besoin d'un conseil ? Passe nous voir en boutique ou envoie-nous un message.</p>
       
@@ -166,7 +208,7 @@
       </div>
     </div>
 
-    <form class="contact-form">
+    <form class="contact-form" data-aos="fade-left">
       <input type="text" placeholder="Ton Nom" required>
       <input type="email" placeholder="Ton Email" required>
       <textarea placeholder="Ton Message" rows="5" required></textarea>
@@ -176,7 +218,55 @@
   </div>
 </section>
 
+<footer>
+  <div class="footer-container">
+    
+    <!-- Colonne 1 : La marque -->
+    <div class="footer-col">
+      <h3>M<span>&</span>T</h3>
+      <p>L'équipement de basketball numéro 1 pour dominer le parquet. Qualité professionnelle, livraison rapide.</p>
+    </div>
+
+    <!-- Colonne 2 : Liens rapides -->
+    <div class="footer-col">
+      <h4>Liens Utiles</h4>
+      <ul>
+        <!-- <li><a href="#collections">Nos Univers</a></li>
+        <li><a href="#produits-phares">Bestsellers</a></li> -->
+        <li><a href="#">Mentions Légales</a></li>
+        <li><a href="#">Conditions de Vente</a></li>
+      </ul>
+    </div>
+
+    <!-- Colonne 3 : Réseaux sociaux -->
+    <div class="footer-col">
+      <h4>Suivez-nous</h4>
+      <div class="social-links">
+        <!-- Les icônes utilisent FontAwesome que tu as déjà installé -->
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+
+  </div>
+  
+  <div class="footer-bottom">
+    <p>&copy; 2026 M&T Basketball. Tous droits réservés.</p>
+  </div>
+</footer>
+
    
 
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000, // Durée de l'animation en millisecondes (1000ms = 1s)
+    once: true,     // L'animation ne se joue qu'une seule fois (quand on descend)
+    offset: 100     // Déclenche l'effet 100px avant que l'élément ne soit visible
+  });
+</script>
+<script src="script.js"></script>
 </body>
 </html>

@@ -1,6 +1,19 @@
 const track = document.getElementById('carouselTrack');
 const nextBtn = document.getElementById('nextBtn');
 const prevBtn = document.getElementById('prevBtn');
+const burger =  document.getElementById('burger');
+const navMenu =  document.getElementById('nav-menu');
+const liens = document.querySelectorAll('.lien');
+
+liens.forEach(lien => {
+    lien.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+    });
+});
+
+burger.addEventListener('click', ()=>{
+  navMenu.classList.toggle('active');
+});
 
 nextBtn.addEventListener('click', () => {
   const cardWidth = track.querySelector('.produit-card').clientWidth;
@@ -22,3 +35,4 @@ window.addEventListener('scroll', () => {
         header.classList.remove('scrolled');
     }
 });
+

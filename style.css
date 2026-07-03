@@ -19,204 +19,52 @@ html {
   box-sizing: border-box;
 }
 
-#accueil {
-  height: 80vh;
-  /* On superpose un dégradé noir semi-transparent et l'image */
-  background-image: 
-    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
-    url('images/pexels-eslames1-31169292.jpg');
-  background-size: cover;
-  background-position: center;
-  color: var(--color-base);
-  padding: 40px 60px;
+/* Style des titres */
+.section-title {
+  text-align: center;
+  margin-bottom: 4rem; /* Donne beaucoup d'espace pour respirer */
+  position: relative;
 }
 
-header {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  position: fixed; 
-  top: 0; 
-  left: 0; 
-  width: 100%;
-  z-index: 1000;
-  padding: 10px 60px;
-  transition: background-color 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease;
-}
-
-header p{
-    font-size: 2.5rem;
-    font-weight: bolder;
-    letter-spacing: 0;
-}
-
-
-header p span{
-    color: var(--color-accent);
-}
-
-ul {
-    height: clamp(60px, 8vh, 80px);
-    padding: 0 clamp(20px, 5vw, 50px);
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    margin: 0;
-    padding: 0;
-    border-radius: 15px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-ul li{
-    margin: 15px 20px;
-}
-.lien{
-    position: relative;
-    text-decoration: none;
-    color: var(--color-base);
-    transition: color 0.4s ease;
-    
-
-}
-
-.lien::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;        /* invisible au départ */
-  height: 2px;
-  background: var(--color-accent-hover);
-  transition: width 0.4s ease;
-}
-
-.lien:hover::after {
-  width: 100%;     /* grandit jusqu'à couvrir tout le texte */
-}
-.lien:hover{
-    color : var(--color-accent-hover)
-}
-
-
-i {
-  background-color: var(--color-accent);
-  color: var(--color-base);
-  transition: background-color 0.3s ease;
-  padding: 5px;
-  border-radius: 10px;
-}
-
-i:hover {
-  background-color: var(--color-accent-hover);
-}
-
-#msg-acc{
-    padding: 40px;
-}
-
-#msg-acc h1 {
-  color: #FFFFFF;
-  font-family: 'Impact', 'Montserrat', sans-serif;
-  font-weight: 900;
+.section-title h2 {
+  /* La fonction clamp permet au texte de s'adapter entre mobile et PC */
+  font-size: clamp(2rem, 5vw, 3rem); 
+  font-weight: 800;
+  text-transform: uppercase;
   letter-spacing: 2px;
-  line-height: 1.1;
-  margin-bottom: 20px;
-  font-size: clamp(2rem, 7vw, 5rem);
+  color: var(--color-text);
+  position: relative;
+  display: inline-block; /* Nécessaire pour centrer la ligne en dessous */
 }
 
-#msg-acc h1 span {
+/* Le mot clé mis en évidence (le <span>) */
+.section-title h2 span {
   color: var(--color-accent);
 }
 
-#msg-acc p {
-  color: #F4F4F4;
-  margin-bottom: 2rem;
-  
-  /* Un peu plus petit pour le sous-titre */
-  font-size: clamp(1rem, 2vw, 1.5rem); 
-}
-
-.btn-acc {
-  display: inline-block;
-  padding: 1rem 1rem;
+/* La ligne décorative élégante sous le titre */
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -15px;
+  transform: translateX(-50%);
+  width: 60px; /* Largeur initiale de la ligne */
+  height: 4px; /* Épaisseur de la ligne */
   background-color: var(--color-accent);
-  color: #FFFFFF;
-  text-decoration: none;
-  font-weight: bold;
-  text-transform: uppercase;
-  border-radius: 4px;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  border-radius: 2px;
+  transition: width 0.4s ease; /* Animation fluide */
 }
 
-/* Petit effet JS mais 100% CSS au survol du bouton */
-.btn-acc:hover {
-  background-color: var(--color-accent-hover);
-  transform: translateY(-3px); /* Le bouton monte légèrement */
+/* Petit effet magique : la ligne s'allonge quand on survole la zone */
+.section-title:hover h2::after {
+  width: 120px;
 }
 
-/* --- RESPONSIVE MOBILE & TABLETTE --- */
-
-/* 1. Ajustement global sur mobile */
-@media (max-width: 900px) {
-    header {
-        padding: 10px 20px; /* On réduit le padding pour laisser de la place */
-    }
-
-    /* Le menu devient plus compact */
-    ul {
-        height: auto;
-        padding: 5px 15px !important;
-        border-radius: 10px;
-    }
-    
-    ul li {
-        margin: 5px 10px;
-        font-size: 0.8rem;
-    }
-}
-
-/* (moins de 600px) */
-@media (max-width: 600px) {
-    /* On cache le menu ou on le simplifie car il est trop large */
-    ul {
-        display: none; /* En vrai site, on mettrait un bouton "Menu Burger" ici */
-    }
-
-    header {
-        justify-content: space-between; /* Logo à gauche, icône à droite */
-    }
-
-    header p {
-        font-size: 1.8rem; /* Logo plus petit sur mobile */
-    }
-
-    #msg-acc {
-        padding: 20px;
-        margin-top: 60px; /* Force un espace pour ne pas passer sous le header */
-    }
-
-    #msg-acc h1 {
-        line-height: 1;
-        margin-bottom: 1rem;
-    }
-
-    .btn-acc {
-        width: 100%; /* Le bouton prend toute la largeur pour faciliter le clic */
-        text-align: center;
-    }
-}
-
-/* Quand le header a la classe .scrolled */
-header.scrolled {
-  background-color: var(--color-text); /* Devient Noir */
-  padding: 10px 60px; /* Devient un peu plus fin au scroll */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Ajoute une ombre pour le détacher */
-}
-
-/* Ajustement des liens si nécessaire pour qu'ils restent visibles */
-header.scrolled .lien {
-  color: var(--color-base); /* S'assure que le texte reste blanc sur fond noir */
+/* Le petit texte descriptif sous le titre */
+.section-title p {
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  color: #666;
+  font-style: italic;
 }

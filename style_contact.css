@@ -63,3 +63,103 @@
 @media (max-width: 768px) {
   .contact-container { grid-template-columns: 1fr; }
 }
+
+/* --- FOOTER (Pied de page) --- */
+footer {
+  background-color: var(--color-text); 
+  color: var(--color-base);
+  padding: 4rem 2rem 1rem 2rem;
+  /* margin-top: 2rem; */
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  /* Encore la magie de la grille pour le responsive automatique */
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.footer-col h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.footer-col h3 span {
+  color: var(--color-accent);
+}
+
+/* Le petit trait orange sous les titres de colonnes */
+.footer-col h4 {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.footer-col h4::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 3px;
+  background-color: var(--color-accent);
+}
+
+.footer-col p {
+  color: #bbb;
+  line-height: 1.6;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-col ul li a {
+  color: #bbb;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Les liens deviennent oranges et glissent vers la droite au survol */
+.footer-col ul li a:hover {
+  color: var(--color-accent);
+  padding-left: 8px; 
+}
+
+/* Boutons ronds pour les réseaux sociaux */
+.social-links a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+  color: var(--color-base);
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background-color: var(--color-accent);
+  transform: translateY(-5px); /* Les icônes "sautent" légèrement */
+}
+
+/* Ligne de copyright tout en bas */
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid #333;
+  color: #888;
+  font-size: 0.9rem;
+}
